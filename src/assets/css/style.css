@@ -1,0 +1,264 @@
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 300;
+    src: url(../fonts/Poppins/Poppins-Light.ttf);
+}
+
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../fonts/Poppins/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    src: url(../fonts/Poppins/Poppins-Medium.ttf);
+}
+
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    src: url(../fonts/Poppins/Poppins-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    src: url(../fonts/Poppins/Poppins-Bold.ttf);
+}
+
+body {
+    font-family: 'Poppins' !important;
+    background-color: #ffffff;
+    /* min-height: 100vh; */
+}
+
+:root {
+    --green-farmacia-techhub: #3fd478;
+    --dark-green-farmacia-techhub: #21b16e;
+    --red-farmacia-techhub: #db2356;
+    --dark-purple-farmacia-techhub: #8c34ea;
+    --purple-farmacia-techhub: #b374f6;
+    --yellow-farmacia-techhub: #ffc400;
+    --orange-farmacia-techhub: #f6613c;
+    --blue-farmacia-techhub: #0e78f9;
+    --black-farmacia-techhub: #3e404e;
+    --gray-farmacia-techhub: #7a7c855c;
+    --dark-gray-farmacia-techhub: #7a7c85;
+    --areia-farmacia-techhub: #ffa6022e;
+    --pink-farmacia-techhub: #c9819b;
+    --primary: #4ade80;
+    --primary-alt: #22c55e;
+    --grey: #64748b;
+    --dark: #1e293b;
+    --dark-alt: #334155;
+    --light: #f1f5f9;
+    --sidebar-width: 300px;
+    --vt-c-techhub: #031d42;
+}
+
+.font--green {
+    color: var(--green-farmacia-techhub);
+}
+.font--red {
+    color: var(--red-farmacia-techhub);
+}
+.font--dark-purple {
+    color: var(--dark-purple-farmacia-techhub);
+}
+.font--purple {
+    color: var(--purple-farmacia-techhub);
+}
+.font--yellow {
+    color: var(--yellow-farmacia-techhub);
+}
+.font--orange {
+    color: var(--orange-farmacia-techhub);
+}
+.font--blue {
+    color: var(--blue-farmacia-techhub);
+}
+.font--black {
+    color: var(--black-farmacia-techhub);
+}
+.font--gray {
+    color: var(--gray-farmacia-techhub);
+}
+.font--dark-gray {
+    color: var(--dark-gray-farmacia-techhub);
+}
+.font--pink {
+    color: var(--pink-farmacia-techhub);
+}
+.font--areia {
+    color: var(--areia-farmacia-techhub);
+}
+
+.wrapper {
+    padding-bottom: 25px;
+}
+
+.card-farmacia-techhub {
+    background: #fff;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    /*box-shadow: 0 0 20px 8px #d0d0d0;*/
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border: 0px;
+}
+
+.card-farmacia-techhub > .card-header {
+    border-bottom: 0;
+    background: #fff;
+}
+
+.card-farmacia-techhub > .card-body {
+    border-bottom: 0;
+}
+
+.loading_pane {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #fff4;
+    cursor: wait;
+    z-index: 998;
+}
+
+.loading {
+    position: absolute;
+    z-index: 998;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    box-shadow: 0 0 20px 8px #d0d0d0;
+    text-align: center;
+    padding: 20px 50px;
+    border-radius: 0.5rem;
+}
+.form-content > div {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.form-title {
+    color: var(--dark-alt);
+    margin-left: 0.75rem;
+}
+.form-input-farmacia-techhub {
+    text-align: start;
+}
+.form-control-farmacia-techhub {
+    border-radius: 15px;
+    font-size: 0.8rem;
+}
+.form-control-farmacia-techhub:focus {
+    border-color: rgb(63, 212, 120, 0.2);
+    color: #495057;
+    background-color: #fff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgb(63 212 120 / 12%);
+}
+.button-group > div:first-child > .form-group > .form-control-farmacia-techhub {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+.button-group > div:last-child > .form-group > .form-control-farmacia-techhub {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+
+.button-group > div:first-child > .form-control-farmacia-techhub {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+.button-group > div:last-child > .form-control-farmacia-techhub {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+
+.dialog--farmacia-techhub-content {
+    text-align: center;
+}
+.dialog--farmacia-techhub-content .icon--dialog-success {
+    color: var(--green-farmacia-techhub);
+    font-size: 64px;
+    margin: 20px;
+}
+.dialog--farmacia-techhub-content .icon--dialog-confirm {
+    color: var(--gray-farmacia-techhub);
+    font-size: 84px;
+    margin: 20px;
+}
+.dialog--farmacia-techhub-content .icon--dialog-error {
+    color: var(--red-farmacia-techhub);
+    font-size: 64px;
+    margin: 20px;
+}
+.dialog--farmacia-techhub-content .text-dialog {
+    color: var(--gray-farmacia-techhub);
+}
+.dialog--farmacia-techhub-content .text-dialog strong {
+    color: var(--gray-farmacia-techhub);
+    font-size: 24px;
+}
+
+.bootbox .modal-content .modal-footer {
+    border-top: 0;
+    justify-content: center;
+}
+
+.list-item:first-child {
+    border-top-right-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
+}
+.list-item {
+    background-color: #fff;
+    border: 1px solid #64b68898;
+    cursor: pointer;
+    padding: 10px;
+}
+.list-item:hover {
+    background-color: #64b68868 !important;
+}
+.list-item:last-child {
+    border-bottom-right-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+
+.column-icons i:hover {
+    color: #6fff65;
+}
+
+.filter-bar {
+    display: flex;
+    align-items: flex-end;
+    align-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.filter-bar > div {
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+.page-title {
+    font-size: 1.8rem;
+    font-weight: bolder;
+    color: var(--black-farmacia-techhub);
+}
+
+.firebase-emulator-warning {
+    display: none;
+}
