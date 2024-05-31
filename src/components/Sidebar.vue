@@ -60,7 +60,7 @@ const userName = ref("");
 
 onMounted(() => {
     is_expanded.value = localStorage.getItem("is_expanded") === 'true';
-    if(LoginUtils.isLogedIn()){
+    if(LoginUtils.isLoggedIn()){
         userName.value = LoginUtils.user.name;
     }
 });

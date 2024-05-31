@@ -20,7 +20,7 @@ function getParams($params: any) {
 
     var nParams = $params;
 
-    if (LoginUtils.isLogedIn()) {
+    if (LoginUtils.isLoggedIn()) {
         nParams['token'] = LoginUtils.currentUser().token;
     }
 

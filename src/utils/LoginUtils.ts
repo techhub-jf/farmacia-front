@@ -1,14 +1,14 @@
 interface Credentials {
-  token?: String | null | undefined;
-  name?: string | null | undefined;
-  email?: string | null | undefined;
+    token?: String | null | undefined
+    name?: string | null | undefined
+    email?: string | null | undefined
 }
 
-function getUser() : Credentials {
+function getUser(): Credentials {
     let credentials = localStorage.getItem('credentials')
     if (credentials != null) {
-       const _credentials : Credentials = JSON.parse(credentials)
-        return { 
+        const _credentials: Credentials = JSON.parse(credentials)
+        return {
             token: _credentials.token,
             name: _credentials.name,
             email: _credentials.email,
@@ -17,26 +17,30 @@ function getUser() : Credentials {
     return {
         token: null,
         name: null,
-        email: null
+        email: null,
     }
 }
 
-export var user = getUser();
+export var user = getUser()
 
 export function login($credentials: Credentials) {
-  localStorage.setItem('credentials', JSON.stringify($credentials))
-  user = getUser()
+    localStorage.setItem('credentials', JSON.stringify($credentials))
+    user = getUser()
 }
 
 export function logout() {
-  localStorage.removeItem('credentials')
-  user = {}
+    localStorage.removeItem('credentials')
+    user = {
+        token: null,
+        name: null,
+        email: null,
+    }
 }
 
-export function isLogedIn() {
-  return user != null
+export function isLoggedIn() {
+    return user.token ? true : false
 }
 
 export function currentUser() {
-  return user
+    return user
 }

@@ -11,15 +11,17 @@
                     <transition name="fade" :duration="{ enter: 800, leave: 100 }">
                         <div v-if="error" class="alert alert-danger alert-dismissible mt-2" role="alert">
                             <span>{{ error }}</span>
-                            <button type="button" class="close" v-on:click="error = ''" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
                         </div>
                     </transition>
                     <Input type="email" v-model="email" placeholder="Email" class="mx-auto w-75 mb-2" />
                     <InputPassword v-model="password" placeholder="Senha" class="mx-auto w-75 mb-2"
                         @enterPress="login" />
-                    <Button title="Login" color="green" :typeNew="true" @action="login" />
+                    <Button v-if="!loading" title="Login" color="green" :typeNew="true" @action="login" />
+                    <div v-else>
+                        <span class="material-symbols-outlined spin p-2" style="font-weight: 800;">
+                            progress_activity
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -37,16 +39,20 @@ import * as LoginUtils from '@/utils/LoginUtils'
 
 const router = useRouter();
 
-const email = ref();
-const password = ref();
+const email = ref("");
+const password = ref("");
 const error = ref();
+const loading = ref(false);
 
 function login() {
-    LoginServices.login(email.value, password.value).then((result)=>{
+    loading.value = true;
+    LoginServices.login(email.value, password.value).then((result) => {
         LoginUtils.login(result);
-        router.push({name: 'main'})
-    }).catch((err)=>{
-        alert(err)
+        loading.value = false;
+        router.push({ name: 'main' });
+    }).catch((err) => {
+        loading.value = false;
+        error.value = "Email ou senha incorretos, tente novamente.";
     })
 }
 
