@@ -15,6 +15,3 @@ import router from './router'
 import { vMaska } from "maska"
 
 createApp(App).use(router).directive('maska', vMaska).mount('#app')
-
-
-console.log(import.meta.env)
