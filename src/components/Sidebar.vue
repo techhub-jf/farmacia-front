@@ -43,7 +43,7 @@
                     account_circle
                 </span>
                 <div>
-                    <span class="text">usuario</span>
+                    <span class="text">{{ userName }}</span>
                 </div>
             </div>
         </div>
@@ -53,11 +53,16 @@
 <script lang="ts" setup>
 import logoURL from '@/assets/logo.png'
 import { onMounted, ref } from 'vue';
+import * as LoginUtils from '@/utils/LoginUtils'
 
 const is_expanded = ref(false);
+const userName = ref("");
 
 onMounted(() => {
     is_expanded.value = localStorage.getItem("is_expanded") === 'true';
+    if(LoginUtils.isLogedIn()){
+        userName.value = LoginUtils.user.name;
+    }
 });
 const ToggleMenu = () => {
     is_expanded.value = !is_expanded.value;

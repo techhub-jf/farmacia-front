@@ -32,6 +32,8 @@ import { useRouter } from 'vue-router'
 import { ref } from 'vue'
 import Button from '@/components/Buttons/Button.vue'
 import logoHeader from '@/assets/logo.png'
+import * as LoginServices from '@/services/LoginServices'
+import * as LoginUtils from '@/utils/LoginUtils'
 
 const router = useRouter();
 
@@ -40,7 +42,12 @@ const password = ref();
 const error = ref();
 
 function login() {
-    router.push("/");
+    LoginServices.login(email.value, password.value).then((result)=>{
+        LoginUtils.login(result);
+        router.push({name: 'main'})
+    }).catch((err)=>{
+        alert(err)
+    })
 }
 
 </script>
