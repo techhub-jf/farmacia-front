@@ -1,0 +1,53 @@
+name: Deploy to GitHub Pages
+##
+on:
+  push:
+    branches:
+      - prod
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js 
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Configure Git Authentication 🔑
+        env:
+          EMAIL: 'leonardo.muller@engenharia.ufjf.br'
+          USERNAME: 'leonardo-gmuller'
+          ACCESS_TOKEN: ${{ secrets.MY_TOKEN_GH }}
+        run: |
+          git config --global credential.helper store
+          echo "https://${ACCESS_TOKEN}:x-oauth-basic@github.com" > ~/.git-credentials
+          git config --global user.email $EMAIL
+          git config --global user.name $USERNAME
+
+      - name: Install Dependencies and Build
+        run: |
+          npm ci
+          NODE_ENV=production npm run build
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Upload dist folder
+          path: './dist'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
