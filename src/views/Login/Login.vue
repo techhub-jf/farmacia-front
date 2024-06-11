@@ -47,10 +47,11 @@ const loading = ref(false);
 function login() {
     loading.value = true;
     LoginServices.login(email.value, password.value).then((result) => {
-        LoginUtils.login(result);
+        const resultParse = <LoginUtils.Credentials>result;
+        LoginUtils.login(resultParse);
         loading.value = false;
         router.push({ name: 'main' });
-    }).catch((err) => {
+    }).catch((_err) => {
         loading.value = false;
         error.value = "Email ou senha incorretos, tente novamente.";
     })

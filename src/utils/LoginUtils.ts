@@ -1,7 +1,7 @@
-interface Credentials {
-    token?: String | null | undefined
-    name?: string | null | undefined
-    email?: string | null | undefined
+export interface Credentials {
+    token: string
+    name: string
+    email: string
 }
 
 function getUser(): Credentials {
@@ -15,9 +15,9 @@ function getUser(): Credentials {
         }
     }
     return {
-        token: null,
-        name: null,
-        email: null,
+        token: "",
+        name: "",
+        email: "",
     }
 }
 
@@ -31,9 +31,9 @@ export function login($credentials: Credentials) {
 export function logout() {
     localStorage.removeItem('credentials')
     user = {
-        token: null,
-        name: null,
-        email: null,
+        token: "",
+        name: "",
+        email: "",
     }
 }
 
