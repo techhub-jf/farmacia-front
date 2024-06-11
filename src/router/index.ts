@@ -7,11 +7,12 @@ import Sales from '@/views/Sales/Sales.vue'
 import Products from '@/views/Products/Products.vue'
 import Settings from '@/views/Settings/Settings.vue'
 
+const basePath = import.meta.env.VITE_BASE_PATH
 const routes = [
     {
-        path: '/',
+        path: `${basePath}/`,
         name: 'main',
-        redirect: '/sales',
+        redirect: `${basePath}/sales`,
         component: Main,
         children: [
             {
@@ -38,7 +39,7 @@ const routes = [
         },
     },
     {
-        path: '/login',
+        path: `${basePath}/login`,
         name: 'login',
         component: Login,
         meta: {
