@@ -50,9 +50,11 @@ export function post($route: String, $params: any) {
         let route = getBaseUrl() + $route;
         instance.post(route, getParams($params))
             .then(function (result : any) {
+                console.log(result);
                 resolve(result.data);
             })
             .catch(function (err : any) {
+                console.log(err);
                 if (err.response && err.response.data) {
                     reject(err.response.data.message);
                     checkNotAuthorized(err);
