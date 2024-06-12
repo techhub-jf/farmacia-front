@@ -51,9 +51,24 @@ function login() {
         LoginUtils.login(resultParse);
         loading.value = false;
         router.push({ name: 'main' });
-    }).catch((_err) => {
+    }).catch((err) => {
         loading.value = false;
-        error.value = "Email ou senha incorretos, tente novamente.";
+        if (err.status) {
+            switch (err.status) {
+                case 404:
+                    error.value = "Usuário não reconhecido.";
+                    break;
+                case 403:
+                    error.value = "Email ou senha incorretos, tente novamente.";
+                    break;
+                case 500:
+                    error.value = "Aconteceu um erro interno, tente novamente mais tarde. Se o erro persistir, comunique o time técnico.";
+                    break;
+            }
+        } else {
+            error.value = "Aconteceu um erro interno, tente novamente mais tarde. Se o erro persistir, comunique o time técnico.";
+        }
+
     })
 }
 
