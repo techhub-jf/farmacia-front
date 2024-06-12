@@ -16,19 +16,19 @@ const routes = [
         component: Main,
         children: [
             {
-                path: '/sales',
+                path: `${basePath}/sales`,
                 name: 'sales',
                 component: Sales,
                 meta: { title: 'Entregas' },
             },
             {
-                path: '/products',
+                path: `${basePath}/products`,
                 name: 'products',
                 component: Products,
                 meta: { title: 'Medicamentos' },
             },
             {
-                path: '/settings',
+                path: `${basePath}/settings`,
                 name: 'settings',
                 component: Settings,
                 meta: { title: 'Configurações' },

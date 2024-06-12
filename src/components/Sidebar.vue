@@ -14,13 +14,13 @@
             </button>
         </div>
         <div class="menu">
-            <router-link to="/products" class="button">
+            <router-link :to="{name: 'products'}" class="button">
                 <span class="icon material-symbols-outlined">
                     medication_liquid
                 </span>
                 <span class="text">Produtos</span>
             </router-link>
-            <router-link to="/sales" class="button">
+            <router-link :to="{name: 'sales'}" class="button">
                 <span class="icon material-symbols-outlined">
                     shopping_cart
                 </span>
@@ -31,7 +31,7 @@
         <div class="flex"></div>
 
         <div class="menu">
-            <router-link to="/settings" class="button">
+            <router-link :to="{name: 'settings'}" class="button">
                 <span class="icon material-symbols-outlined">
                     settings
                 </span>
