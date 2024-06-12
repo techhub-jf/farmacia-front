@@ -64,7 +64,7 @@ const router = createRouter({
     routes: routes,
 })
 
-router.beforeEach((to, from, next) => {
+router.beforeEach((to, _from, next) => {
     if (to.meta.title) {
         const title = <string>to.meta.title
         document.title = title
