@@ -10,7 +10,7 @@ import Settings from '@/views/Settings/Settings.vue'
 const basePath = import.meta.env.VITE_BASE_PATH
 const routes = [
     {
-        path: `${basePath}/`,
+        path: `${basePath}`,
         name: 'main',
         redirect: `${basePath}/sales`,
         component: Main,
@@ -64,7 +64,7 @@ const router = createRouter({
     routes: routes,
 })
 
-router.beforeEach((to, from, next) => {
+router.beforeEach((to, _from, next) => {
     if (to.meta.title) {
         const title = <string>to.meta.title
         document.title = title
