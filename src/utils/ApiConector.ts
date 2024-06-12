@@ -50,7 +50,7 @@ export function post($route: String, $params: any) {
         let route = getBaseUrl() + $route;
         instance.post(route, getParams($params))
             .then(function (result : any) {
-                console.log(result)
+                console.log(result.data)
                 resolve(result.data);
             })
             .catch(function (err : any) {
