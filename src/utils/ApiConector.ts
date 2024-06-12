@@ -36,7 +36,7 @@ export function get($route: String, $params: any) {
             })
             .catch(function (err : any) {
                 if (err.response && err.response.data) {
-                    reject(err.response.data.message);
+                    reject(err.response.data);
                     checkNotAuthorized(err);
                 } else {
                     reject(err);
@@ -72,7 +72,7 @@ export function put($route: String, $params: any) {
             })
             .catch(function (err : any) {
                 if (err.response && err.response.data) {
-                    reject(err.response.data.message);
+                    reject(err.response.data);
                     checkNotAuthorized(err);
                 } else {
                     reject(err);
@@ -90,7 +90,7 @@ export function remove($route: String, $params: any) {
             })
             .catch(function (err : any) {
                 if (err.response && err.response.data) {
-                    reject(err.response.data.message);
+                    reject(err.response.data);
                     checkNotAuthorized(err);
                 } else {
                     reject(err);

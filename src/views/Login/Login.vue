@@ -58,7 +58,7 @@ function login() {
                 case 404:
                     error.value = "Usuário não reconhecido.";
                     break;
-                case 403:
+                case 401:
                     error.value = "Email ou senha incorretos, tente novamente.";
                     break;
                 case 500:
