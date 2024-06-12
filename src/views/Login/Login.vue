@@ -48,6 +48,7 @@ function login() {
     loading.value = true;
     LoginServices.login(email.value, password.value).then((result) => {
         const resultParse = <LoginUtils.Credentials>result;
+        console.log(resultParse);
         LoginUtils.login(resultParse);
         loading.value = false;
         router.push({ name: 'main' });
