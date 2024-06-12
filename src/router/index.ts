@@ -10,7 +10,7 @@ import Settings from '@/views/Settings/Settings.vue'
 const basePath = import.meta.env.VITE_BASE_PATH
 const routes = [
     {
-        path: `${basePath}/`,
+        path: `${basePath}`,
         name: 'main',
         redirect: `${basePath}/sales`,
         component: Main,
